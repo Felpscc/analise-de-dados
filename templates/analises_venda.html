@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Análises de Venda</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Análises de Venda</h1>
+    <div>
+        <img src="{{ url_for('static', filename='sales_chart.png') }}" alt="Gráfico de Vendas">
+    </div>
+    <div class="product-list">
+        {% for venda in vendas %}
+        <div class="product-item">
+            <h2>{{ venda.produto }}</h2>
+            <p>Quantidade: {{ venda.quantidade }} unidades</p>
+            <p>Valor: R$ {{ venda.valor }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
